@@ -2,20 +2,20 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 /**
- * µÚ¶ş´ÎÊµÏ° ÌâÄ¿1£ºÓÃÊı×éÇó½âÔ¼Éª·ò»·
- * Ä£ÄâÔ¼Éª·ò»·ÓÎÏ·¹ı³ÌµÄÀà
- * ÓÃÁ½ÖÖ²»Í¬·½Ê½·Ö±ğÊµÏÖÓÎÏ·¹ı³Ì£º
- * ·½·¨Josephus_1()Í¨¹ı´ÓÊı×éÖĞÉ¾³ı¡°±»É±µô¡±Íæ¼ÒÀ´Ä£ÄâÓÎÏ·
- * ·½·¨Josephus_2()ÔòÍ¨¹ı½«¡°±»É±µô¡±Íæ¼ÒµÄisAliveÊôĞÔÖÃÎªfalseÀ´Ä£ÄâÓÎÏ·
- * @author 114151°à-ÀîÑåÀÚ-20151001251
+ * ç¬¬äºŒæ¬¡å®ä¹  é¢˜ç›®1ï¼šç”¨æ•°ç»„æ±‚è§£çº¦ç‘Ÿå¤«ç¯
+ * æ¨¡æ‹Ÿçº¦ç‘Ÿå¤«ç¯æ¸¸æˆè¿‡ç¨‹çš„ç±»
+ * ç”¨ä¸¤ç§ä¸åŒæ–¹å¼åˆ†åˆ«å®ç°æ¸¸æˆè¿‡ç¨‹ï¼š
+ * æ–¹æ³•Josephus_1()é€šè¿‡ä»æ•°ç»„ä¸­åˆ é™¤â€œè¢«æ€æ‰â€ç©å®¶æ¥æ¨¡æ‹Ÿæ¸¸æˆ
+ * æ–¹æ³•Josephus_2()åˆ™é€šè¿‡å°†â€œè¢«æ€æ‰â€ç©å®¶çš„isAliveå±æ€§ç½®ä¸ºfalseæ¥æ¨¡æ‹Ÿæ¸¸æˆ
+ * @author
  * 
  */
 
 public class Game {
 	private int amountOfPlayer;
 	private Player[] queue;
-	private int deathNumber; // ÓÎÏ·ÖĞ½Ğµ½deathNumberµÄÍæ¼Ò±»É±µô
-	private int startFrom; // ÓÎÏ·´Ó±àºÅÎªstartFromµÄÍæ¼Ò¿ªÊ¼
+	private int deathNumber; // æ¸¸æˆä¸­å«åˆ°deathNumberçš„ç©å®¶è¢«æ€æ‰
+	private int startFrom; // æ¸¸æˆä»ç¼–å·ä¸ºstartFromçš„ç©å®¶å¼€å§‹
 
 	public Game(int aOP, int dN, int sF) {
 		amountOfPlayer = aOP;
@@ -23,10 +23,10 @@ public class Game {
 		startFrom = sF;
 	}
 
-	public Game(int aOP, int dN) { // ÒòÎªJavaÎŞ·¨ÉèÖÃ²ÎÊıÄ¬ÈÏÖµ£¬ËùÒÔ¶Ô¹¹Ôìº¯Êı½øĞĞÖØÔØ
+	public Game(int aOP, int dN) { // å› ä¸ºJavaæ— æ³•è®¾ç½®å‚æ•°é»˜è®¤å€¼ï¼Œæ‰€ä»¥å¯¹æ„é€ å‡½æ•°è¿›è¡Œé‡è½½
 		amountOfPlayer = aOP;
 		deathNumber = dN;
-		startFrom = 1; // Èô²»ÊäÈëstartFrom£¬Ä¬ÈÏ´Ó1ºÅ¿ªÊ¼
+		startFrom = 1; // è‹¥ä¸è¾“å…¥startFromï¼Œé»˜è®¤ä»1å·å¼€å§‹
 	}
 
 	public void gatherThePlayers() {
@@ -34,7 +34,7 @@ public class Game {
 		Player p = new Player();
 		for (int i = 0; i < amountOfPlayer; ++i) {
 			queue[i] = new Player();
-			System.out.println("ÇëÊäÈë" + (i + 1) + "ºÅÍæ¼ÒĞÕÃû£º");
+			System.out.println("è¯·è¾“å…¥" + (i + 1) + "å·ç©å®¶å§“åï¼š");
 			Scanner sc = new Scanner(System.in);
 			queue[i].name = sc.next();
 			queue[i].serialNumber = i + 1;
@@ -45,31 +45,31 @@ public class Game {
 	public void josephus_1() {
 		this.gatherThePlayers();
 		System.out.println("\n>>>>>>>>>>josephus_1 Start");
-		int number = 0; // Íæ¼Òº°µÄÊı×Ö
+		int number = 0; // ç©å®¶å–Šçš„æ•°å­—
 		for (int i = startFrom - 1; queue.length > 1; ++i) {
 			++number;
 			if (number == deathNumber) {
 				String name = queue[i].name;
 				int sNumber = queue[i].serialNumber;
-				System.out.println(sNumber + "ºÅ " + name + " ±»É±µô");
-				for (int ii = i; ii < queue.length - 1; ++ii) {// ´ÓÊı×éÖĞÉ¾³ı±»É±µôµÄÍæ¼Ò
+				System.out.println(sNumber + "å· " + name + " è¢«æ€æ‰");
+				for (int ii = i; ii < queue.length - 1; ++ii) {// ä»æ•°ç»„ä¸­åˆ é™¤è¢«æ€æ‰çš„ç©å®¶
 					queue[ii] = queue[ii + 1];
 				}
 				queue = Arrays.copyOf(queue, queue.length - 1);
-				--i; // É¾³ı±»É±µôµÄÍæ¼Òºó£¬ÅÅÔÚ±»É±µôÍæ¼ÒÖ®ºóµÄÍæ¼ÒµÄÊı×éË÷Òı¶¼»á¼õ 1
-				number = 0; // ÓĞÍæ¼Ò³ö¾Öºó£¬ÖØĞÂ¿ªÊ¼±¨Êı
+				--i; // åˆ é™¤è¢«æ€æ‰çš„ç©å®¶åï¼Œæ’åœ¨è¢«æ€æ‰ç©å®¶ä¹‹åçš„ç©å®¶çš„æ•°ç»„ç´¢å¼•éƒ½ä¼šå‡ 1
+				number = 0; // æœ‰ç©å®¶å‡ºå±€åï¼Œé‡æ–°å¼€å§‹æŠ¥æ•°
 
-				System.out.println("Ê£ÏÂµÄÍæ¼Ò£º");
+				System.out.println("å‰©ä¸‹çš„ç©å®¶ï¼š");
 				String nowQueue = "[";
 				for (Player p : queue) {
-					String pInfo = p.serialNumber + "ºÅ" + p.name + ", ";
+					String pInfo = p.serialNumber + "å·" + p.name + ", ";
 					nowQueue += pInfo;
 				}
 				nowQueue += "]";
 				System.out.println(nowQueue + "\n");
 			}
 
-			if (i >= (queue.length - 1)) // Èç¹ûÂÖµ½ÁË¶ÓÁĞ×îºóÒ»ÈË£¬Ö®ºó´ÓµÚÒ»¸öÈË¿ªÊ¼
+			if (i >= (queue.length - 1)) // å¦‚æœè½®åˆ°äº†é˜Ÿåˆ—æœ€åä¸€äººï¼Œä¹‹åä»ç¬¬ä¸€ä¸ªäººå¼€å§‹
 				i = -1;
 		}
 		System.out.println(">>>>>>>>>>>>josephus_1 End\n");
@@ -78,7 +78,7 @@ public class Game {
 	public void josephus_2() {
 		this.gatherThePlayers();
 		System.out.println("\n>>>>>>>>>>Josephus_2 start");
-		int number = 0; // Íæ¼Ò±¨µÄÊı×Ö
+		int number = 0; // ç©å®¶æŠ¥çš„æ•°å­—
 		for (int i = startFrom - 1; amountOfPlayer > 1; ++i) {
 			if (queue[i].isAlive) {
 				++number;
@@ -86,15 +86,15 @@ public class Game {
 					queue[i].isAlive = false;
 					String name = queue[i].name;
 					int sNumber = queue[i].serialNumber;
-					System.out.println(sNumber + "ºÅ " + name + " ±»É±µô");
+					System.out.println(sNumber + "å· " + name + " è¢«æ€æ‰");
 					--amountOfPlayer;
-					number = 0; // ÓĞÍæ¼Ò³ö¾Öºó£¬ÏÂÒ»¸öÈËÖØĞÂ¿ªÊ¼±¨Êı
+					number = 0; // æœ‰ç©å®¶å‡ºå±€åï¼Œä¸‹ä¸€ä¸ªäººé‡æ–°å¼€å§‹æŠ¥æ•°
 
-					System.out.println("Ê£ÏÂµÄÍæ¼Ò£º");
+					System.out.println("å‰©ä¸‹çš„ç©å®¶ï¼š");
 					String nowQueue = "[";
 					for (Player p : queue) {
 						if (p.isAlive) {
-							String pInfo = p.serialNumber + "ºÅ" + p.name + ", ";
+							String pInfo = p.serialNumber + "å·" + p.name + ", ";
 							nowQueue += pInfo;
 						}
 					}
@@ -102,7 +102,7 @@ public class Game {
 					System.out.println(nowQueue + "\n");
 				}
 			}
-			if (i == (queue.length - 1)) // Èç¹ûÂÖµ½¶ÓÁĞµÄ×îºóÒ»ÈË£¬Ö®ºó´ÓµÚÒ»¸öÈË¿ªÊ¼
+			if (i == (queue.length - 1)) // å¦‚æœè½®åˆ°é˜Ÿåˆ—çš„æœ€åä¸€äººï¼Œä¹‹åä»ç¬¬ä¸€ä¸ªäººå¼€å§‹
 				i = -1;
 		}
 		System.out.println(">>>>>>>>>>>>josephus_2 End");
