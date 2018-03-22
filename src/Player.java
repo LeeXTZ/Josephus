@@ -1,7 +1,7 @@
 
 /**
- * 描述玩家Player的类，包含成员变量：姓名name、序号serialNumber、是否活着isAlive
- * @author 114151班-李彦磊-20151001251
+ * 鎻忚堪鐜╁Player鐨勭被锛屽寘鍚垚鍛樺彉閲忥細濮撳悕name銆佸簭鍙穝erialNumber銆佹槸鍚︽椿鐫�isAlive
+ * @author
  * 
  */
 public class Player {
