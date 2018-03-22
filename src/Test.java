@@ -1,24 +1,24 @@
 import java.util.Scanner;
 /**
- * ²âÊÔGameÀà
- * @author 114151°à-ÀîÑåÀÚ-20151001251
+ * æµ‹è¯•Gameç±»
+ * @author
  *
  */
 public class Test {
 
 	/**
-	 * ÊµÀı»¯GameÀà¶ÔÏó£¬
-	 * ¶ÔGameÀàÖĞµÄÁ½¸ö·½·¨Josephus_1()ºÍJosephus_2()·Ö±ğ½øĞĞ²âÊÔ
+	 * å®ä¾‹åŒ–Gameç±»å¯¹è±¡ï¼Œ
+	 * å¯¹Gameç±»ä¸­çš„ä¸¤ä¸ªæ–¹æ³•Josephus_1()å’ŒJosephus_2()åˆ†åˆ«è¿›è¡Œæµ‹è¯•
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		System.out.println("ÓÎÏ·ÈËÊıÊÇ£¿");
+		System.out.println("æ¸¸æˆäººæ•°æ˜¯ï¼Ÿ");
 		int amountOfPlayer = sc.nextInt();
-		System.out.println("½Ğµ½¼¸µÄÍæ¼Ò±»É±ËÀ£¿");
+		System.out.println("å«åˆ°å‡ çš„ç©å®¶è¢«æ€æ­»ï¼Ÿ");
 		int deathNumber = sc.nextInt();
-		System.out.println("ÓÎÏ·´Ó¼¸ºÅÍæ¼Ò¿ªÊ¼£¿");
+		System.out.println("æ¸¸æˆä»å‡ å·ç©å®¶å¼€å§‹ï¼Ÿ");
 		int startFrom = sc.nextInt();
 		Game testGame = new Game(amountOfPlayer, deathNumber, startFrom);
 		System.out.println("========== josephus_1() =========");
